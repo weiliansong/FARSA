@@ -1,4 +1,5 @@
 import model
+import argparse
 import definition
 import numpy as np
 import tensorflow as tf
@@ -7,9 +8,14 @@ from scipy.ndimage import imread
 img_means = definition.img_means
 spec = definition.spec
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--img_path', dest='img_path',
+                    action='store', type=str, default='./pano.jpg')
+args = parser.parse_args()
+
 # Image Preprocessing
 print('Preprocessing Image')
-img_data = tf.read_file('pano.jpg')
+img_data = tf.read_file(args.img_path)
 img_data = tf.image.decode_jpeg(img_data, channels=3)
 img_data = img_data[167:1330, :, :]
 img_data = tf.cast(img_data, tf.float32)
@@ -34,13 +40,13 @@ with tf.Session() as sess:
   # Restoring from best checkpoint
   print('Restoring from checkpoint')
   restorer = tf.train.Saver()
-  restorer.restore(sess, 'checkpoint/model.ckpt-4001')
+  restorer.restore(sess, 'checkpoint/farsa.ckpt')
 
   _logits = sess.run(logits)
 
   # Star Rating Prediction
   sr_prediction = np.argmax(_logits['sr']) + 1
-  print('\nStar Rating Prediction: ' + str(sr_prediction))
+  print('\nStar Rating Prediction: ' + str(sr_prediction) + ' Star')
   print('')
 
   # Multi-task Auxiliary Label Prediction
