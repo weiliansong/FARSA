@@ -14,7 +14,7 @@ publication:
 }
 ```
 ## Getting Started
-Download the trained weights required for the inference [here](), and extract them at the root of the repo.
+Download the trained weights required for the inference [here](https://drive.google.com/file/d/1wO7DPn1yM5JX0R52vOMd-lhb1iOM4BXJ/view?usp=sharing), and extract them at the root of the repo.
 
 Run the inference script by running `python infer.py`, or pass in your own panoramic image this way:
 
