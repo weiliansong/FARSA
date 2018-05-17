@@ -1,4 +1,3 @@
 *.pyc
 checkpoint/
-*.jpg
-*.txt
+*.tgz
