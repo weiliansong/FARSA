@@ -14,10 +14,9 @@ publication:
 }
 ```
 ## Getting Started
-Download the trained weights required for the inference [here](), and put it inside a 
-folder named `checkpoint/` at the root of the repo.
+Download the trained weights required for the inference [here](), and extract them at the root of the repo.
 
-Run the inference script by typing `python infer.py`, or pass in your own panorama image this way:
+Run the inference script by running `python infer.py`, or pass in your own panoramic image this way:
 
 ```python infer.py --img_path path_to_image```
 
@@ -35,5 +34,11 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 
 ## Contact
 Weilian Song  
+weilian.song<span></span>@uky.edu  
 University of Kentucky  
 http://cs.uky.edu/~wso226/
+
+Nathan Jacobs  
+jacobs<span></span>@cs.uky.edu  
+University of Kentucky  
+http://cs.uky.edu/~jacobs/
